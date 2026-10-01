@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Metallica - Contato</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <a class="logo" href="index.html">Metallica</a>
+    <nav>
+      <a href="equipe.html">Equipe</a>
+      <a href="contato.html" aria-current="page">Contato</a>
+    </nav>
+  </header>
+  <main>
+    <form class="form" id="form">
+      <h1>Contato</h1>
+      <label>Mensagem
+        <textarea name="mensagem" rows="7" required></textarea>
+      </label>
+      <button type="submit">Enviar</button>
+      <p id="aviso" role="status"></p>
+    </form>
+  </main>
+  <footer>Metallica - 2026</footer>
+  <script>
+    document.getElementById('form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      document.getElementById('aviso').textContent = 'Mensagem enviada. Obrigado!';
+      this.reset();
+    });
+  </script>
+</body></html>

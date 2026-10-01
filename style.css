@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@900&family=Barlow:wght@400;600&display=swap');
+
+:root {
+  --fundo: #1a1c1f;
+  --chumbo: #26292e;
+  --aco: #9aa0a6;
+  --claro: #efece6;
+  --vermelho: #a3221c;
+  --titulo: 'Big Shoulders Display', Impact, sans-serif;
+  --texto: 'Barlow', Arial, sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--texto);
+  background: var(--fundo);
+  color: var(--claro);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+a { color: inherit; text-decoration: none; }
+
+
+header {
+  background: var(--chumbo);
+  border-bottom: 4px solid var(--vermelho);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: .5rem 1.5rem;
+  padding: 1rem 2rem;
+}
+.logo {
+  font-family: var(--titulo);
+  font-size: 2.2rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+nav { display: flex; gap: 1.5rem; }
+nav a { padding-bottom: 2px; border-bottom: 2px solid transparent; }
+nav a:hover, nav a[aria-current] { border-bottom-color: var(--vermelho); }
+
+
+main { flex: 1; padding: 2rem; }
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  max-width: 720px;
+  margin: 0 auto;
+}
+.card {
+  background: var(--chumbo);
+  border: 1px solid #3b3f45;
+  padding: 1rem;
+}
+.card .img {
+  aspect-ratio: 16 / 9;
+  margin-bottom: .8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--titulo);
+  font-size: 2.4rem;
+  color: rgba(255,255,255,.85);
+}
+.card h2 { font-family: var(--titulo); font-size: 1.6rem; letter-spacing: .03em; margin-bottom: .3rem; }
+.card p { font-size: .9rem; color: var(--aco); }
+
+
+.i1 {background-image: url(imagens/killemall.jpg); background-size: cover;} .i2 {background-image: url(imagens/ridethelightning.jpg); background-size: cover;}
+.i3 { background-image: url(imagens/masterofpuppets.jpg); background-size: cover; } .i4 {background-image: url(imagens/andjusticeforall.jpg); background-size: cover;}
+.i5{ background-image: url(imagens/metallica.jpg); background-size: cover; } .i6 { background-image: url(imagens/72seasons.jpg); background-size: cover; }
+
+
+.form {
+  max-width: 480px;
+  margin: 0 auto;
+  background: var(--chumbo);
+  border: 1px solid #3b3f45;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.form h1 { font-family: var(--titulo); font-size: 2.2rem; text-align: center; }
+.form label { display: flex; flex-direction: column; gap: .3rem; }
+.form input, .form textarea {
+  font: inherit; padding: .6rem;
+  background: var(--fundo); color: var(--claro);
+  border: 1px solid #555; resize: vertical;
+}
+.form button {
+  font-family: var(--titulo); font-size: 1.3rem; letter-spacing: .08em;
+  padding: .7rem; background: var(--vermelho); color: #fff; border: 0; cursor: pointer;
+}
+.form button:hover { background: #c22a23; }
+#aviso { text-align: center; min-height: 1.4em; color: var(--aco); }
+
+
+footer {
+  background: var(--chumbo);
+  border-top: 4px solid var(--vermelho);
+  text-align: center;
+  padding: 1rem;
+  font-size: .9rem;
+  color: var(--aco);
+}
+
+:focus-visible { outline: 3px solid var(--vermelho); outline-offset: 3px; }
+
+
+@media (max-width: 560px) {
+  header { justify-content: center; padding: 1rem; }
+  main { padding: 1.25rem 1rem; }
+  .cards { grid-template-columns: 1fr; }
+}
